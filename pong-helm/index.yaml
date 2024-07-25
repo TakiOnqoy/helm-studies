@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  pong-app:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-07-24T09:57:00.860083526-03:00"
+    description: A Helm chart for Kubernetes
+    digest: f6c666053b7dbbb5d887f661a4e2d17f326742fea84618941bb6248629e6ca0b
+    name: pong-app
+    type: application
+    urls:
+    - pong-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-07-24T09:57:00.859224477-03:00"

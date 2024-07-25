@@ -15,13 +15,16 @@ Helm instalado
 
 ```
 helm repo add <repo-name> <repo-url>
-helm upgrade --install <release-name> <repo-name>/<chart-name> --version <chart-version> -n <namespace>
+helm upgrade --install <release-name> <repo-name>/<chart-name> --version <chart-version> -n <namespace> --create-namespace
 helm get values <release-name>
 helm upgrade --install <release-name> <repo-name>/<chart-name> --version <chart-version> -f <file-name> -n <namespace> 
+helm list -A
 ```
 
 ```
 helm create <chart-name>
+helm package <chart-name>
+helm dependency build
 
 ```
 
@@ -42,7 +45,33 @@ appVersion - diz respeito a versão da aplicação em si. Estamos a falar princi
 ## Docker
 
 docker login
+.Release.Name o
+- Criar um container
+- Postar o container online em um repositório apropriado
+- Fazer um helm create
+- helm package?
+- utilizar do helm create para fazer nosso próprio chart
 
-docker build -t takionqoy/getting-started:pong-app .
+## Helm repo
 
-docker push takionqoy/getting-started:pong-app
+- helm package <dir-to-main-folder>
+- helm repo index .
+- upload to s3
+  - modify bucket policy
+    ```json
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Sid": "Stmt1405592139000",
+              "Effect": "Allow",
+              "Principal": "*",
+              "Action": "s3:GetObject",
+              "Resource": [
+                  "arn:aws:s3:::bucketname/*",
+                  "arn:aws:s3:::bucketname"
+              ]
+          }
+      ]
+    }
+    ```
