@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: pong-app
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount | default 1 }}
   selector:
     matchLabels:
       app: pong-app
@@ -14,6 +14,13 @@ spec:
     spec:
       containers:
       - name: pong-app
-        image: takionqoy/getting-started:pong-app
+        image: {{ .Values.image.repository | default "takionqoy/getting-started" }}:{{ .Values.image.tag | default "latest" }}
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "{{ .Values.resources.requests.memory }}"
+            cpu: "{{ .Values.resources.requests.cpu }}"
+          limits:
+            memory: "{{ .Values.resources.limits.memory }}"
+            cpu: "{{ .Values.resources.limits.cpu }}"

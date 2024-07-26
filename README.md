@@ -61,7 +61,7 @@ helm list -A
 ```bash
 helm create <chart-name>
 helm package <chart-name> | helm dependency build
-helm repo index <path-to-dir> --url https://<your-bucket-name>.s3.amazonaws.com/charts --merge
+helm repo index <path-to-dir> --url https://<your-bucket-name>.s3.amazonaws.com/charts --merge index.yaml
 ```
 
 ### Chart.yaml:
@@ -114,3 +114,10 @@ docker login
 
 
 kubectl port-forward pod/<pod_name>> host_port:remote_port
+
+v0.1.0
+Primeira versão com valores chumbados no template
+v0.2.0
+Segunda versão com valores sendo puxados do values mas com Helm apontando erro em "spec.template.spec.resources"
+v0.3.0
+Terceira versão corrigindo erro da segunda release

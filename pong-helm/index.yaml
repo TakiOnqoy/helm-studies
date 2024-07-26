@@ -3,12 +3,32 @@ entries:
   pong-app:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2024-07-24T09:57:00.860083526-03:00"
+    created: "2024-07-25T23:43:15.639458669-03:00"
+    description: A Helm chart for Kubernetes
+    digest: 740105da9ad138663e1514c6126db22c785fdf3378fea31a9cc4d98d1902e0d2
+    name: pong-app
+    type: application
+    urls:
+    - https://helm-studies-repo-bucket.s3.amazonaws.com/charts/pong-app-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-07-25T23:43:15.639146572-03:00"
+    description: A Helm chart for Kubernetes
+    digest: e7f599fa6e8b7b42528761475df317db919c551266cbbe06172a0ca347a02d84
+    name: pong-app
+    type: application
+    urls:
+    - https://helm-studies-repo-bucket.s3.amazonaws.com/charts/pong-app-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-07-25T23:43:15.638889967-03:00"
     description: A Helm chart for Kubernetes
     digest: f6c666053b7dbbb5d887f661a4e2d17f326742fea84618941bb6248629e6ca0b
     name: pong-app
     type: application
     urls:
-    - pong-app-0.1.0.tgz
+    - https://helm-studies-repo-bucket.s3.amazonaws.com/charts/pong-app-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-24T09:57:00.859224477-03:00"
+generated: "2024-07-25T23:43:15.638523041-03:00"
