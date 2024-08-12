@@ -1,9 +1,9 @@
 Objetivos:
 
 - [x] entender o fluxo básico de comandos helm
-- [ ] entender o padrão de diretórios e arquivos do Helm
-- [ ] saber criar um chart e subi-lo a um repositório fonte de versionamento de charts
-- [ ] saber da linguagem para templarizar os charts
+- [x] entender o padrão de diretórios e arquivos do Helm
+- [x] saber criar um chart e subi-lo a um repositório fonte de versionamento de charts
+- [x] saber da linguagem para templarizar os charts
 - [ ] saber aplicar o entendimento a ambientes desconhecidos
   - ~~se não achei um repo, isso provavelmente quer dizer que a instalação é feita a partir de chart local~~
   - comandos úteis para se averiguar um ambiente
@@ -33,9 +33,7 @@ Comandos com alteração local, mesmo que interagindo com o servidor remoto (nã
 1. helm repo list [flags]
 1. helm repo update [REPO_NAME] [flags]
 1. helm search repo [KEYWORD] [flags]
-1. helm search hub [KEYWORD] [flags]
 1. helm package [CHART_PATH] [flags]
-1. helm lint [CHART] [flags]
 1. helm template [NAME] [CHART] [flags]
 1. helm dependency update [CHART_PATH] [flags]
 1. helm dependency build [CHART_PATH] [flags]
@@ -68,9 +66,9 @@ helm repo index <path-to-dir> --url https://<your-bucket-name>.s3.amazonaws.com/
 
 Esse cara tem dois campos importantes
 
-version - versão do chart; acredito que ficará mais claro quando efetivamente a gente fizer mudanças no chart em si
+version - versão do chart; mudanças nos templates e manifestos.
 
-appVersion - diz respeito a versão da aplicação em si. Estamos a falar principalmente sobre
+appVersion - diz respeito a versão da aplicação em si.
 
 ### index.yaml
 
@@ -121,3 +119,5 @@ v0.2.0
 Segunda versão com valores sendo puxados do values mas com Helm apontando erro em "spec.template.spec.resources"
 v0.3.0
 Terceira versão corrigindo erro da segunda release
+v0.4.0
+Quarta versão com condicional para resources e uso de helpers.tpl para nome
