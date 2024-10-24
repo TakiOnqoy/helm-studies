@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "pong-app.name" }}
+spec:
+  replicas: {{ .Values.replicaCount | default 1 }}
+  selector:
+    matchLabels:
+      app: {{ include "pong-app.name" }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "pong-app.name" }}
+    spec:
+      containers:
+      - name: {{ include "pong-app.name" }}
+        image: {{ .Values.image.repository | default "takionqoy/getting-started" }}:{{ .Values.image.tag | default "latest" }}
+        ports:
+        - containerPort: 80
+        {{- if .Values.resources }}
+        resources:
+          {{- if .Values.resources.requests }}
+          requests:
+            memory: {{ .Values.resources.requests.memory | default "64Mi" }}
+            cpu: {{ .Values.resources.requests.cpu | default "250m" }}
+          {{- end }}
+          {{- if .Values.resources.limits }}
+          limits:
+            memory: {{ .Values.resources.limits.memory | default "128Mi" }}
+            cpu: {{ .Values.resources.limits.cpu | default "500m" }}
+          {{- end }}
+        {{- end }}

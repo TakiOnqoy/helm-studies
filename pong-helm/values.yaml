@@ -1,0 +1,20 @@
+nameOverride: ""
+fullnameOverride: ""
+
+replicaCount: 3
+
+image:
+  # repository: takionqoy/getting-started
+  tag: pong-app
+
+resources:
+  requests:
+    memory: "32Mi"
+    cpu: "125m"
+  limits:
+    memory: "64Mi"
+    cpu: "250m"
+---
+superMode:
+  - extraSecret: true
+    modoSaijo: true
