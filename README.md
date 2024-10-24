@@ -58,7 +58,7 @@ helm list -A
 
 ```bash
 helm create <chart-name>
-helm package <chart-name> | helm dependency build
+helm package . | helm dependency build
 helm repo index <path-to-dir> --url https://<your-bucket-name>.s3.amazonaws.com/charts --merge index.yaml
 ```
 

@@ -1,4 +1,4 @@
-nameOverride: ""
+nameOverride: "temp"
 fullnameOverride: ""
 
 replicaCount: 3
@@ -14,7 +14,3 @@ resources:
   limits:
     memory: "64Mi"
     cpu: "250m"
----
-superMode:
-  - extraSecret: true
-    modoSaijo: true

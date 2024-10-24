@@ -1,0 +1,34 @@
+name: "some-app"
+image:
+  repository: 000000000000.dkr.ecr.us-east-1.amazonaws.com/<repository_name>
+  # Overrides the image tag whose default is the chart appVersion.
+  # Requires an automated solution to update Chart.yaml
+  tag: ""
+  command: ["echo", "Hello World"]
+  
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 80
+
+# if enabled, provide configuration
+ingress:
+  enabled: false 
+
+# if enabled, provide configuration
+autoscaling:
+  enabled: false 
+
+# if enabled, provide configuration
+resources: 
+  enabled: false 
+
+serviceAccount:
+  create: false # 'false' option uses deployment's namespace shared service account
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+# If in doubt about any configuration blocks, check complete-values.yaml
